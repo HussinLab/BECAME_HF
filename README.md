@@ -9,3 +9,6 @@
 - Olivier Tastet (CoreLab, Canada)
 - Galadriel Briere (team Hussin, Canada)
 - Nassiba Menghoum (team Beauloye, Belgium)
+
+##### Concensus clustering (ClustOmics)
+See package https://github.com/galadrielbriere/ClustOmics
