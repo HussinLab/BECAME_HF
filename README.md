@@ -4,7 +4,7 @@
 
 ##### Contributors:
 - Pamela Mehanna (team Hussin, Canada)
-- Anik Fortier (team DesRosiers, Canada)
+- Anik Forest (team DesRosiers, Canada)
 - Julie Thompson (team DesRosiers, Canada)
 - Olivier Tastet (CoreLab, Canada)
 - Galadriel Briere (team Hussin, Canada)
