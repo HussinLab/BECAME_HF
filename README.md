@@ -1,6 +1,4 @@
-### BECAME_HF
-
-#### Code repository for the project BECAME HF 
+### Code repository for the project BECAME HF 
 
 ##### Contributors:
 - Pamela Mehanna (team Hussin, Canada)
