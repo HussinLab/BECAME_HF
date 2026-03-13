@@ -6,4 +6,4 @@
 - Olivier Tastet (CoreLab, Canada)
 
 ##### Concensus clustering (ClustOmics)
-See package https://github.com/galadrielbriere/ClustOmics
+See package [here](https://github.com/galadrielbriere/ClustOmics).
