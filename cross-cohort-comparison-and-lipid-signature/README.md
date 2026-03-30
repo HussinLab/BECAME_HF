@@ -1,10 +1,10 @@
 # Cross-Cohort Comparison and Lipid Signature
 
-Analysis pipeline comparing lipidomic profiles across the Belgian (BECAME) and Canadian (MIRACLE) HFpEF cohorts to identify a minimal lipid signature distinguishing patient clusters.
+Analysis pipeline comparing lipidomic profiles across the Belgian (BECAME-HF1) and Canadian (BECAME-HF2) HFpEF cohorts. The second part of the analysis aims at identifying a minimal lipid signature distinguishing the B1 patient cluster from other subjects in the BECAME-HF1 cohort.
 
 ## Pipeline
 
-Run all steps sequentially with:
+All steps can be run individually but they all use the processed data from `0_CleanDataset.R`, which would need to be run at least once. `3_CorrelationGraph.R` also needs `2_MinimalSignatureLasso.R` to be run before because it uses the lipids identified for esthetic of the network graph. `4_FigureCreation.R` requires all scripts to have run once, since it gathers the results and creates the final figure. The recommended way is to run them sequentially from the bash script:
 
 ```bash
 bash runall.sh
@@ -13,9 +13,9 @@ bash runall.sh
 | Step | Script | Description |
 |------|--------|-------------|
 | 0 | `0_CleanDataset.R` | Reads raw lipidomic data from both cohorts, merges them, removes batch effects with limma, and exports a normalized expression matrix with metadata. |
-| 1 | `1_ClusterClassificationRF.R` | Trains a Random Forest on BECAME patient clusters (B1/B2/B3) and applies it to reassign MIRACLE patients into the same cluster space. |
-| 2 | `2_MinimalSignatureLasso.R` | Runs repeated LASSO regressions to identify lipids that most frequently distinguish cluster B1 from the rest of BECAME samples, producing a ranked predictor list. |
-| 3 | `3_CorrelationGraph.R` | Builds a lipid–lipid correlation network from the BECAME HFpEF patients, highlighting the frequent LASSO predictors within the graph. |
+| 1 | `1_ClusterClassificationRF.R` | Trains a Random Forest on BECAME-HF1 patient clusters (B1/B2/B3) and applies it to reassign BECAME-HF2 patients into the same cluster space. |
+| 2 | `2_MinimalSignatureLasso.R` | Runs repeated LASSO regressions to identify lipids that most frequently distinguish cluster B1 from the rest of BECAME-HF1 samples, producing a ranked predictor list. |
+| 3 | `3_CorrelationGraph.R` | Builds a lipid–lipid correlation network from the BECAME-HF1 HFpEF patients, highlighting the frequent LASSO predictors within the graph. |
 | 4 | `4_FigureCreation.R` | Generates manuscript figures: cluster heatmaps, PCA plots with RF-predicted clusters, ridge-regression probability scores, and feature boxplots. |
 
 ## Configuration
