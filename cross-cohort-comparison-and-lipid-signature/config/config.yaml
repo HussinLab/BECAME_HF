@@ -1,6 +1,6 @@
 # config.yaml
 global_vars:
-  project_dir: "/Users/otastet/Projects/ICM/hussin/miracle/BECAME-MIRACLE-lipidomics-2026-new-inputs/BECAME_HF/cross-cohort-comparison-and-lipid-signature"
+  project_dir: "/path/to/project/directory"
   data_dir: "data"
   results_dir: "results"
   lipidomic_data_path: "Supplementary_Excel_File_1_Manuscrit_Tableaux_supplements_donnees_lipidomiques_20250313_20260218.xlsx"

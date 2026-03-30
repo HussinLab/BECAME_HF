@@ -62,11 +62,10 @@ read_data <- function(data_excel_path) {
         miracle_lipids = miracle_lipidomic_expr$Compound.Name..Canadian.cohort.
 
         miracle_lipidomic_expr = miracle_lipidomic_expr[,grepl('^X',colnames(miracle_lipidomic_expr))]
-        print(dim(became_lipidomic_expr))
+        
         # Order BECAME lipids to match MIRACLE lipids
         became_lipidomic_expr = became_lipidomic_expr[lipids_became_order, grepl('^X',colnames(became_lipidomic_expr))]
         became_lipids = rownames(became_lipidomic_expr)
-        print(dim(became_lipidomic_expr))
         became_lipidomic_expr = as.data.frame(t(apply(became_lipidomic_expr,2,FUN=function(x){return(as.numeric(x))})))
         miracle_lipidomic_expr = as.data.frame(t(apply(miracle_lipidomic_expr,2,FUN=function(x){return(as.numeric(x))})))
         
