@@ -21,3 +21,21 @@ bash runall.sh
 ## Configuration
 
 All parameters (paths, thresholds, plot dimensions, colours) are set in `config/config.yaml`.
+
+## Dependencies
+
+R 4.3.2 with the following packages:
+
+| Package | Version | | Package | Version |
+|---------|---------|-|---------|---------| 
+| car | 3.1-3 | | igraph | 2.0.2 |
+| caret | 6.0-94 | | limma | 3.58.1 |
+| cowplot | 1.1.3 | | pheatmap | 1.0.12 |
+| data.table | 1.15.0 | | plyr | 1.8.9 |
+| edgeR | 4.0.16 | | pROC | 1.18.5 |
+| ggfortify | 0.4.16 | | randomForest | 4.7-1.2 |
+| ggplotify | 0.1.2 | | RColorBrewer | 1.1-3 |
+| ggpubr | 0.6.0 | | readxl | 1.4.3 |
+| ggrepel | 0.9.5 | | reshape2 | 1.4.4 |
+| ggridges | 0.5.6 | | tidyverse | 2.0.0 |
+| glmnet | 4.1-8 | | yaml | 2.3.8 |
