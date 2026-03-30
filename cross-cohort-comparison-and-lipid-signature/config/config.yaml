@@ -1,9 +1,8 @@
-# config.yaml
 global_vars:
   project_dir: "/path/to/project/directory"
   data_dir: "data"
   results_dir: "results"
-  lipidomic_data_path: "Supplementary_Excel_File_1_Manuscrit_Tableaux_supplements_donnees_lipidomiques_20250313_20260218.xlsx"
+  lipidomic_data_path: "Supplementary_Excel_File_1_Manuscrit_Tableaux_supplements_donnees_lipidomiques_20250313_20260218.xlsx" # this should be downloaded from the Mendeley data repository and added to the data/ folder
   quantile_threshold: 0.01
 
 plot_colors:
