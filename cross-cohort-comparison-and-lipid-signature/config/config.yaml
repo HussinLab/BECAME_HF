@@ -1,0 +1,72 @@
+global_vars:
+  project_dir: "/path/to/project/directory"
+  data_dir: "data"
+  results_dir: "results"
+  lipidomic_data_path: "Supplementary_Excel_File_1_Manuscrit_Tableaux_supplements_donnees_lipidomiques_20250313_20260218.xlsx" # this should be downloaded from the Mendeley data repository and added to the data/ folder
+  quantile_threshold: 0.01
+
+plot_colors:
+  HFpEF: "#ED8A34"
+  CONTROL: "darkgray"
+  Non-HF: "darkgray"
+  B-Non-HF: "darkgray"
+  C-Non-HF: "darkgray"
+  B1: "#0072B2"
+  B2: "#E69F00"
+  B3: "#009E73"
+  C1: "#77b3de"
+  C2: "#f6df85"
+  C3: "#cd8a97"
+  BELGIAN COHORT: "darkolivegreen3"
+  CANADIAN COHORT: "deepskyblue"
+
+pretty_labels:
+  B-CTL: "B-Non-HF"
+  BCtrl: "B-Non-HF"
+  M-CTL: "C-Non-HF"
+  B1: "B1"
+  B2: "B2"
+  B3: "B3"
+  M1: "C1"
+  M2: "C2"
+  M3: "C3"
+  BECAME: "BELGIAN COHORT"
+  MIRACLE: "CANADIAN COHORT"
+
+ClusterClassificationRF:
+  ntrees: 2000
+
+MinimalSignatureLasso:
+  n_iter: 200
+
+CorrelationGraph: 
+  correlation_threshold: 0.6
+  frequency_threshold: 0.3
+  color_coding_path: "data/color_coding_lipid_classes.csv"
+
+FigureCreation:
+  rf_model: "random_forest/models/random_forest_model.rds"
+  frequency_threshold : 0.5
+  
+plot_params:
+  supplementary_plots:
+    width: 12
+    height: 10
+  heatmap_4A: 
+    width: 16
+    height: 5
+  freqplot_4B:
+    width: 8
+    height: 4
+  pcaplot_4B:
+    width: 12
+    height: 6
+  corrplot_5A:
+    width: 12
+    height: 10
+  pcaplot_5C:
+    width: 12
+    height: 10
+  boxplot_5D:
+    width: 12
+    height: 10

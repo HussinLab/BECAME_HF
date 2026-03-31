@@ -1,0 +1,5 @@
+Rscript 0_CleanDataset.R
+Rscript 1_ClusterClassificationRF.R
+Rscript 2_MinimalSignatureLasso.R
+Rscript 3_CorrelationGraph.R
+Rscript 4_FigureCreation.R

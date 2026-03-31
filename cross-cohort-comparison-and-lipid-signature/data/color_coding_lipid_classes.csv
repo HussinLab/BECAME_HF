@@ -1,0 +1,20 @@
+Lipid suclasses,Abbreviations,color
+Acylcarnitines,CAR,magenta
+Free fatty acids,FA,hotpink
+Monoacylglycerophosphocholines,LPC,orangered
+Diacylglycerophosphocholines,PC,tomato
+Monoalkylglycerophosphocholines,EtherLPC,darkorange1
+"1-alkyl, 2-acylglycerophosphocholines",EtherPC,sienna
+Oxydized diacylglycerophosphocholines,OxPC,firebrick
+Diacylglycerophosphoethanolamines,PE,olivedrab
+Monoacylglycerophosphoethanolamines,LPE,olivedrab3
+"1-alkyl, 2-acylglycerophosphoethanolamines",EtherPE,seagreen
+Diacylglycerophosphoinositols,PI,gold
+Ceramides,Cer,plum3
+1-Deoxy Ceramides,DCer,violet
+Ceramide phosphocholines (sphingomyelins),SM,darkviolet
+Oxydized ceramide phosphocholines (sphingomyelins),OxSM,darkorchid1
+Steryl esters,CE,navy
+Diglycerides,DG,turquoise
+Triacylglycerols,TG,turquoise4
+Oxidized triacylglycerols,OxTG,deepskyblue
