@@ -1,9 +1,18 @@
-### Code repository for the project BECAME HF 
+### Code repository for the paper "Lipidomics Identifies HFpEF Phenogroups and a High-Risk Metabolic Signature" - The BECAME-HF project
 
-##### Contributors:
-- Pamela Mehanna (team Hussin, Canada)
-- Anik Forest (team DesRosiers, Canada)
-- Olivier Tastet (CoreLab, Canada)
+#### Clustering analysis
+Install the required packages before running the script:
 
-##### Concensus clustering (ClustOmics)
-See package [here](https://github.com/galadrielbriere/ClustOmics).
+```r
+install.packages(c(
+  "ggplot2",
+  "readxl",
+  "dplyr",
+  "FactoMineR",
+  "factoextra",
+  "survival",
+  "survminer"
+))
+```
+
+For the consensus clustering analysis using ClustOmics, see package [here](https://github.com/galadrielbriere/ClustOmics).
