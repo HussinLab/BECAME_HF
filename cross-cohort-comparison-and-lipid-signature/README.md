@@ -4,6 +4,7 @@ Analysis pipeline comparing lipidomic profiles across the Belgian (BECAME-HF1) a
 
 ## Pipeline
 
+Running the pipeline requires to download the Supplemental data on the Mendeley repository. 
 All steps can be run individually but they all use the processed data from `0_CleanDataset.R`, which would need to be run at least once. `3_CorrelationGraph.R` also needs `2_MinimalSignatureLasso.R` to be run before because it uses the lipids identified for esthetic of the network graph. `4_FigureCreation.R` requires all scripts to have run once, since it gathers the results and creates the final figure. The recommended way is to run them sequentially from the bash script:
 
 ```bash
