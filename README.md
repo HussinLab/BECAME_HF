@@ -1,7 +1,7 @@
 ## Code repository for the paper "Lipidomics Identifies HFpEF Phenogroups and a High-Risk Metabolic Signature" - The BECAME-HF project
 
 ### Clustering analysis
-Running the script ```clustering.R``` requires to download the Supplemental data on the Mendeley repository (```lipid_data.csv``` and ```cluster_data.csv```). 
+Running the script ```clustering.R``` requires to download the Supplemental data on the Mendeley repository (```input_data_clustering.xlsx```). 
 
 Install the required packages before running the script:
 
