@@ -1,9 +1,17 @@
 ## Code repository for the paper "Lipidomics Identifies HFpEF Phenogroups and a High-Risk Metabolic Signature" - The BECAME-HF project
 
 ### Clustering analysis
-Running the script ```clustering.R``` requires to download the Supplemental data on the Mendeley repository (```input_data_clustering.xlsx```). 
 
-Install the required packages before running the script:
+The script `clustering.R` performs unsupervised clustering of patients with heart failure with preserved ejection fraction (HFpEF) using lipidomics data and evaluates associated clinical outcomes through survival analysis.
+
+The workflow integrates:
+- Principal Component Analysis (PCA)
+- Hierarchical Clustering on Principal Components (HCPC)
+- Kaplan-Meier survival analysis
+
+Running the script requires to download the Supplemental data on the Mendeley repository (```input_data_clustering.xlsx```). 
+
+#### Dependencies
 
 ```r
 install.packages(c(
