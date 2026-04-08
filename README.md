@@ -9,7 +9,7 @@ The workflow integrates:
 - Hierarchical Clustering on Principal Components (HCPC)
 - Kaplan-Meier survival analysis
 
-Running the script requires to download the Supplemental data on the Mendeley repository (```input_data_clustering.xlsx```). 
+Running the script requires the input file ```input_data_clustering.xlsx``` available here. 
 
 #### Dependencies
 
@@ -34,7 +34,7 @@ Analysis pipeline comparing lipidomic profiles across the Belgian (BECAME-HF1) a
 
 #### Pipeline
 
-Running the pipeline requires to download the Supplemental data on the Mendeley repository. 
+Running the pipeline requires to download the Supplemental data on the Mendeley repository (10.17632/rnhdrhsxsz.2). 
 All steps can be run individually but they all use the processed data from `0_CleanDataset.R`, which would need to be run at least once. `3_CorrelationGraph.R` also needs `2_MinimalSignatureLasso.R` to be run before because it uses the lipids identified for esthetic of the network graph. `4_FigureCreation.R` requires all scripts to have run once, since it gathers the results and creates the final figure. The recommended way is to run them sequentially from the bash script:
 
 ```bash
