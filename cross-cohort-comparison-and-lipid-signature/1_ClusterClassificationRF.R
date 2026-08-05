@@ -166,6 +166,34 @@ create_visualization <- function(became_results, miracle_results) {
     return(plot_grid(became_confusion_matrix, miracle_confusion_matrix, ncol=2))
 }
 
+build_predictions_table <- function(model, became_rf_data, became_meta, miracle_data, miracle_meta, train_idx) {
+    became_pred <- predict(model, became_rf_data, type = "response")
+    miracle_pred <- predict(model, miracle_data, type = "response")
+
+    became_ids <- rownames(became_rf_data)
+    miracle_ids <- rownames(miracle_data)
+
+    became_table <- data.frame(
+        id = sub("^X", "", became_meta[became_ids, "id"]),
+        cohort = became_meta[became_ids, "cohort"],
+        original_cluster = became_meta[became_ids, "cluster"],
+        predicted_cluster = paste0("B", as.character(became_pred)),
+        split = ifelse(seq_along(became_ids) %in% train_idx, "train", "test"),
+        stringsAsFactors = FALSE
+    )
+
+    miracle_table <- data.frame(
+        id = sub("^X", "", miracle_meta[miracle_ids, "id"]),
+        cohort = miracle_meta[miracle_ids, "cohort"],
+        original_cluster = miracle_meta[miracle_ids, "cluster"],
+        predicted_cluster = paste0("B", as.character(miracle_pred)),
+        split = "external",
+        stringsAsFactors = FALSE
+    )
+
+    rbind(became_table, miracle_table)
+}
+
 save_results <- function(results) {
 
     pdf(file.path(PLOTS_DIR, "classification_results.pdf"), width=12, height=5)
@@ -173,27 +201,33 @@ save_results <- function(results) {
     dev.off()
     
     write.csv(
-        results$report$became_class_metrics,
-        file.path(METRICS_DIR, "became_metrics.csv")
+        results$became_results$class_metrics,
+        file.path(METRICS_DIR, "became_metrics.csv"),
+        row.names = FALSE
     )
     
     write.csv(
-        results$report$miracle_class_metrics,
-        file.path(METRICS_DIR, "miracle_metrics.csv")
+        results$miracle_results$class_metrics,
+        file.path(METRICS_DIR, "miracle_metrics.csv"),
+        row.names = FALSE
     )
     
     write.csv(
         data.frame(
-            Feature = names(results$report$top_features),
-            Importance = results$report$top_features
+            Feature = names(results$became_results$top_features),
+            Importance = results$became_results$top_features
         ),
-        file.path(METRICS_DIR, "top_features.csv")
+        file.path(METRICS_DIR, "top_features.csv"),
+        row.names = FALSE
+    )
+
+    write.csv(
+        results$predictions,
+        file.path(RESULTS_DIR, "predicted_clusters.csv"),
+        row.names = FALSE
     )
     
-    # Save model
     saveRDS(results$model, file.path(MODELS_DIR, "random_forest_model.rds"))
-    
-    # Save full results object
     saveRDS(results, file.path(RESULTS_DIR, "full_results.rds"))
     
 }
@@ -224,6 +258,15 @@ main <- function() {
         as.factor(gsub('M','', data$miracle$meta$cluster)),
         "MIRACLE"
     )
+
+    predictions <- build_predictions_table(
+        rf_results$model,
+        became_rf_data,
+        data$became$meta,
+        data$miracle$data,
+        data$miracle$meta,
+        rf_results$train_idx
+    )
     
     plots <- create_visualization(became_results, miracle_results)
     
@@ -231,6 +274,7 @@ main <- function() {
         model = rf_results$model,
         became_results = became_results,
         miracle_results = miracle_results,
+        predictions = predictions,
         plots = plots
     ))
 }
@@ -245,4 +289,5 @@ if (!interactive()) {
     cat("Plots:", PLOTS_DIR, "\n")
     cat("Metrics:", METRICS_DIR, "\n")
     cat("Models:", MODELS_DIR, "\n")
+    cat("Predicted clusters:", file.path(RESULTS_DIR, "predicted_clusters.csv"), "\n")
 }
